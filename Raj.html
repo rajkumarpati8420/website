@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Rajkumar</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <style>
+  	body{
+  		background-color:#34bbd9;
+  	}
+  	
+  	#h1{
+  		text-align:center;
+  		border:10px solid green;
+  	}
+  	#day{
+  		text-align:center;
+  		padding:5px;
+  		margin-left:25%;
+  		margin-right:25%;
+  		width:50%;
+  		box-sizing:border-box;
+  		border:10px solid red;
+  	}
+  	
+  	.div1{
+  		border:3px solid blue;
+  		border-radius:50px;
+  		text-align:center;
+  		background-image:url("Raj.jpg");
+  		background-size:cover;
+  		width:100%;
+  		height:500px;
+  		overflow:auto;
+  		
+  	
+  	}
+  	
+  	.button{
+  	background-color: #4CAF50; /* Green */
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 40px;
+  	}
+  	.button:hover{
+  	background-color:red; /* Green */
+  	color: white;
+  	}
+  
+  </style>
+
+</head>
+
+<body>
+	<h1 id="h1">TODAY</h1>
+	<h1 id="day"></h1>
+	<div class="div1">
+	<input class="button" type="date" id="mydate" value="2000-05-05"><br>
+	<h2>submit</h2>
+	<button class="button" onclick="myFunction()">submit</button>
+	</div>
+	<p id="demo"></p>
+	
+	
+	
+	
+  <script>
+  	var d=new Date();
+  	var day=["sunday","monday","tuesday","Wednesday","Thursday","Friday","saturday"];
+  	var month=["january","february","March","April","may","jun","jully","august","September","October","november","december"];
+  	console.log(day[d.getDay()]);
+  	console.log(d);
+  	document.getElementById("day").innerHTML=d.getFullYear()+"/"+month[d.getMonth()]+"/"+d.getDate()+"/"+day[d.getDay()];
+  	
+  	//var idate=document.getElementById("idate").value;
+  	//var idate2=new Date(idate)
+  	//console.log(idate2);
+  	
+  	function myFunction(){
+  		var x=document.getElementById("mydate").value;
+  		//console.log(x);
+  		var d=new Date(x);
+  		document.getElementById("demo").innerHTML=x;
+  			document.getElementById("day").innerHTML=x;
+  			document.getElementById("h1").innerText=day[d.getDay()];
+  		//return x;
+  	}
+  	//var y=myFunction();
+  	//console.log(y);
+  
+  </script>
+</body>
+</html>
